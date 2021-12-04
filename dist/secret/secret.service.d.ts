@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
-import { Repository } from 'typeorm';
-import { SecretModel } from './secret.model';
+import { Observable } from "rxjs";
+import { Repository } from "typeorm";
+import { SecretModel } from "./secret.model";
 export declare class SecretService {
     private secretRepository;
     constructor(secretRepository: Repository<SecretModel>);

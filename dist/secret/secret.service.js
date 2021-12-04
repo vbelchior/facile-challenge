@@ -32,7 +32,7 @@ let SecretService = class SecretService {
     filter(nameLike) {
         const query = {};
         if (type_util_1.TypeUtil.exists(nameLike))
-            query[secret_model_1.SecretModel.NAME] = { $regex: nameLike, $options: 'i' };
+            query[secret_model_1.SecretModel.NAME] = { $regex: nameLike, $options: "i" };
         return (0, rxjs_1.from)(this.secretRepository.find({ where: query }));
     }
 };
