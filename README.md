@@ -26,8 +26,8 @@ CREATE TABLE secrets (id SERIAL NOT NULL PRIMARY KEY, name  varchar(250));
 
 ## Pré-Requisitos para clonar
 
-Requer [Node.js](https://nodejs.org/) previamente instalado.
-Requer gereciador de pacotes , eu utilizo [npm](https://docs.npmjs.com/about-npm).
+- Requer [Node.js](https://nodejs.org/) previamente instalado.
+- Requer gereciador de pacotes , eu utilizo [npm](https://docs.npmjs.com/about-npm).
 
 ## Instalação
 
