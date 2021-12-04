@@ -48,13 +48,10 @@ $ npm run code
 
 ```
 
-```
-
-
-
-##Contato
+## Contato
 
 - Autor - [Victor Belchior](https://www.linkedin.com/in/victor-belchior-299066149/)
 
+```
 
 ```
