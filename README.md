@@ -16,7 +16,7 @@ Um desafio da empresa Facile que tem como objetivo captar uma string , criptogra
 
 ## Banco de dados utilizados:
 
--[PostgreSql](https://www.postgresql.org/) página de instalação e documentação do banco relacional.
+- [PostgreSql](https://www.postgresql.org/) página de instalação e documentação do banco relacional.
 
 scritpt da tabela:
 
