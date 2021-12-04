@@ -18,12 +18,6 @@ Um desafio da empresa Facile que tem como objetivo captar uma string , criptogra
 
 - [PostgreSql](https://www.postgresql.org/) página de instalação e documentação do banco relacional.
 
-scritpt da tabela:
-
-```bash
-CREATE TABLE secrets (id SERIAL NOT NULL PRIMARY KEY, name  varchar(250));
-```
-
 ## Pré-Requisitos para clonar
 
 - Requer [Node.js](https://nodejs.org/) previamente instalado.
@@ -51,7 +45,3 @@ $ npm run code
 ## Contato
 
 - Autor - [Victor Belchior](https://www.linkedin.com/in/victor-belchior-299066149/)
-
-```
-
-```
