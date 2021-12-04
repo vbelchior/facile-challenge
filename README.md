@@ -8,7 +8,13 @@ Um desafio da empresa Facile que tem como objetivo captar uma string , criptogra
 
 ## Linguagens e libs utilizadas:
 
--[TypeScript](https://www.typescriptlang.org/download) página de instalação e documentação da linguagem. -[Node.js](https://nodejs.org/) página de instalação e documentação -[NestJs](https://docs.nestjs.com/) - página de instalação e documentação do framework. -[TypeORM](https://typeorm.io/#/) - página de instalação e documentação do ORM. -[node-postgres](https://www.npmjs.com/package/pg) - dependência necessária devido ao banco de dados e tecnologias usadas.
+```bash
+-[TypeScript](https://www.typescriptlang.org/download) página de instalação e documentação da linguagem.;
+-[Node.js](https://nodejs.org/) página de instalação e documentação.;
+-[NestJs](https://docs.nestjs.com/) - página de instalação e documentação do framework.;
+-[node-postgres](https://www.npmjs.com/package/pg) - dependência necessária devido ao banco de dados e tecnologias usadas.;
+-[TypeORM](https://typeorm.io) - página de instalação e documentação do ORM. ;
+```
 
 ## Banco de dados utilizados:
 
