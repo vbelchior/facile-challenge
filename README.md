@@ -10,7 +10,9 @@ Um desafio da empresa Facile que tem como objetivo captar uma string , criptogra
 
 -[TypeScript](https://www.typescriptlang.org/download) página de instalação e documentação da linguagem. -[Node.js](https://nodejs.org/) página de instalação e documentação -[NestJs](https://docs.nestjs.com/) - página de instalação e documentação do framework. -[TypeORM](https://typeorm.io/#/) - página de instalação e documentação do ORM. -[node-postgres](https://www.npmjs.com/package/pg) - dependência necessária devido ao banco de dados e tecnologias usadas.
 
-##Banco de dados utilizados: -[PostgreSql](https://www.postgresql.org/) página de instalação e documentação do banco relacional.
+## Banco de dados utilizados:
+
+-[PostgreSql](https://www.postgresql.org/) página de instalação e documentação do banco relacional.
 
 scritpt da tabela:
 
