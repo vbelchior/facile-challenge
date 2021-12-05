@@ -13,6 +13,7 @@ import { SecretModule } from "./secret/secret.module";
       entities: [SecretModel],
       synchronize: true,
       autoLoadEntities: true,
+      ssl: true,
     }),
     SecretModule,
   ],

@@ -9,6 +9,7 @@ module.exports = {
             "src/database/migrations/"
         ],
         "entitiesDir":"src/models"
-    }
+    },
+    "ssl": true
 }
 
