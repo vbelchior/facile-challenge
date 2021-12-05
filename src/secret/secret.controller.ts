@@ -10,12 +10,20 @@ import {
   Render,
 } from "@nestjs/common";
 import { Cron, CronExpression } from "@nestjs/schedule";
+import {
+  ApiBody,
+  ApiCreatedResponse,
+  ApiOkResponse,
+  ApiParam,
+  ApiTags,
+} from "@nestjs/swagger";
 import { firstValueFrom, of } from "rxjs";
 import { TypeUtil } from "src/utils/type.util";
 import { EncriptService } from "./encript.service";
-import { SecretModel } from "./secret.model";
+import { SecretModel, SecreteDTO } from "./secret.model";
 import { SecretService } from "./secret.service";
 
+@ApiTags("secrets")
 @Controller("secrets")
 export class SecretController {
   constructor(
@@ -24,6 +32,8 @@ export class SecretController {
   ) {}
 
   @Post()
+  @ApiCreatedResponse({ description: "Secret Created" })
+  @ApiBody({ type: SecreteDTO })
   public async create(@Body() secret: SecretModel): Promise<SecretModel> {
     try {
       if (!TypeUtil.hasText(secret.name)) throw console.error();
@@ -41,6 +51,7 @@ export class SecretController {
   }
 
   @Get("/:id")
+  @ApiCreatedResponse({ description: "Secret finded" })
   public async retrieve(@Param("id") id: number): Promise<SecretModel> {
     try {
       const secret: SecretModel = await firstValueFrom(
@@ -62,12 +73,14 @@ export class SecretController {
   }
 
   @Get()
-  public filter(@Query("name") name?: string): Promise<SecretModel[]> {
-    return firstValueFrom(this.secretService.filter(name));
+  @ApiOkResponse({ description: "Get all secrets" })
+  public filter(): Promise<SecretModel[]> {
+    return firstValueFrom(this.secretService.filter());
   }
 
   // Method to don't sleep heroku app
   @Cron(CronExpression.EVERY_MINUTE)
+  @ApiBody({ type: SecretModel })
   handleCron() {
     return console.debug("time");
   }
