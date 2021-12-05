@@ -9,6 +9,7 @@ import {
   Query,
   Render,
 } from "@nestjs/common";
+import { Cron, CronExpression } from "@nestjs/schedule";
 import { firstValueFrom, of } from "rxjs";
 import { TypeUtil } from "src/utils/type.util";
 import { EncriptService } from "./encript.service";
@@ -63,5 +64,11 @@ export class SecretController {
   @Get()
   public filter(@Query("name") name?: string): Promise<SecretModel[]> {
     return firstValueFrom(this.secretService.filter(name));
+  }
+
+  // Method to don't sleep heroku app
+  @Cron(CronExpression.EVERY_MINUTE)
+  handleCron() {
+    return firstValueFrom(this.secretService.filter());
   }
 }
