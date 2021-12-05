@@ -8,8 +8,8 @@ import { SecretModule } from "./secret/secret.module";
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      type: "postgres",
       url: process.env.DATABASE_URL,
+      type: "postgres",
       entities: [SecretModel],
       synchronize: true,
       autoLoadEntities: true,
