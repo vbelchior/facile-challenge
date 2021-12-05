@@ -14,6 +14,11 @@ import { SecretModule } from "./secret/secret.module";
       synchronize: true,
       autoLoadEntities: true,
       ssl: true,
+      extra: {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      },
     }),
     SecretModule,
   ],
