@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SecretController = void 0;
 const common_1 = require("@nestjs/common");
+const schedule_1 = require("@nestjs/schedule");
 const rxjs_1 = require("rxjs");
 const type_util_1 = require("../utils/type.util");
 const encript_service_1 = require("./encript.service");
@@ -53,6 +54,9 @@ let SecretController = class SecretController {
     filter(name) {
         return (0, rxjs_1.firstValueFrom)(this.secretService.filter(name));
     }
+    handleCron() {
+        return console.debug("time");
+    }
 };
 __decorate([
     (0, common_1.Post)(),
@@ -62,21 +66,27 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], SecretController.prototype, "create", null);
 __decorate([
-    (0, common_1.Get)('/:id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Get)("/:id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], SecretController.prototype, "retrieve", null);
 __decorate([
     (0, common_1.Get)(),
-    __param(0, (0, common_1.Query)('name')),
+    __param(0, (0, common_1.Query)("name")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], SecretController.prototype, "filter", null);
+__decorate([
+    (0, schedule_1.Cron)(schedule_1.CronExpression.EVERY_MINUTE),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], SecretController.prototype, "handleCron", null);
 SecretController = __decorate([
-    (0, common_1.Controller)('secrets'),
+    (0, common_1.Controller)("secrets"),
     __metadata("design:paramtypes", [encript_service_1.EncriptService,
         secret_service_1.SecretService])
 ], SecretController);

@@ -69,6 +69,6 @@ export class SecretController {
   // Method to don't sleep heroku app
   @Cron(CronExpression.EVERY_MINUTE)
   handleCron() {
-    return firstValueFrom(this.secretService.filter());
+    return console.debug("time");
   }
 }

@@ -8,7 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
+const schedule_1 = require("@nestjs/schedule");
 const secret_model_1 = require("./secret/secret.model");
 const secret_module_1 = require("./secret/secret.module");
 let AppModule = class AppModule {
@@ -16,17 +18,20 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot(),
+            schedule_1.ScheduleModule.forRoot(),
             typeorm_1.TypeOrmModule.forRoot({
-                type: 'postgres',
-                host: '127.0.0.1',
-                port: 5432,
-                username: 'postgres',
-                password: 'postgres',
-                database: 'challenge',
-                schema: 'public',
+                url: process.env.DATABASE_URL,
+                type: "postgres",
                 entities: [secret_model_1.SecretModel],
                 synchronize: true,
                 autoLoadEntities: true,
+                ssl: true,
+                extra: {
+                    ssl: {
+                        rejectUnauthorized: false,
+                    },
+                },
             }),
             secret_module_1.SecretModule,
         ],
