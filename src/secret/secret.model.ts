@@ -24,4 +24,4 @@ export class SecretModel {
     }
   }
 }
-export class SecreteDTO extends OmitType(SecretModel, ["id"] as const) {}
+export class SecretDTO extends OmitType(SecretModel, ["id"] as const) {}

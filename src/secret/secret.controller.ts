@@ -17,7 +17,7 @@ import {
 import { firstValueFrom, of } from "rxjs";
 import { TypeUtil } from "src/utils/type.util";
 import { decrypt, encrypt } from "./encrypt";
-import { SecretModel, SecreteDTO } from "./secret.model";
+import { SecretModel, SecretDTO } from "./secret.model";
 import { SecretService } from "./secret.service";
 
 @ApiTags("secrets")
@@ -27,7 +27,7 @@ export class SecretController {
 
   @Post()
   @ApiCreatedResponse({ description: "Secret Created" })
-  @ApiBody({ type: SecreteDTO })
+  @ApiBody({ type: SecretDTO })
   public async create(@Body() secret: SecretModel): Promise<SecretModel> {
     try {
       if (!TypeUtil.hasText(secret.name)) throw console.error();
