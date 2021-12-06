@@ -7,7 +7,6 @@ import {
   Param,
   Post,
 } from "@nestjs/common";
-import { Cron, CronExpression } from "@nestjs/schedule";
 import {
   ApiBody,
   ApiCreatedResponse,
@@ -66,13 +65,5 @@ export class SecretController {
   @ApiOkResponse({ description: "Get all secrets" })
   public filter(): Promise<SecretModel[]> {
     return firstValueFrom(this.secretService.filter());
-  }
-
-  // Method to don't sleep heroku app
-  @Cron(CronExpression.EVERY_10_MINUTES)
-  @ApiBody({ type: SecretModel })
-  handleCron() {
-    this.secretService.filter();
-    return console.debug("time");
   }
 }
